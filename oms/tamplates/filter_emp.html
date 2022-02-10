@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+    Filter employee
+{% endblock title %}
+    
+
+{% block body %}
+    <div class="container" style="margin-bottom: 40vh; font-weight: 600;">
+        <h1>Search for an employee</h1>
+        <form action="/filter_emp" method="post">
+            {% csrf_token %}
+            <label for="name" >Name</label><br>
+            <input type="text"  id="name" name="name" value="{{name}}"><br>
+            <label for="dept" >Department</label><br>
+            <input type="text"  id="dept" name="dept" value="{{dept}}"><br>
+            <label for="role" >Role</label><br>
+            <input type="text"  id="role" name="role" value="{{role}}"><br>
+            <hr>
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+    </div>
+{% endblock body %}

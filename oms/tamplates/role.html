@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Add a role
+{% endblock title %} 
+
+{% block body %}
+    <div class="container" style="margin-bottom: 480px; font-weight: 600;">
+        <h1>Add a new Role here</h1>
+        <form action="/role" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <button type="submit" class="save btn btn-default bg-primary">Save</button>
+        </form>
+    </div>
+{% endblock body %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Add an department
+{% endblock title %}
+
+{% block body %}
+    <div class="container" style="margin-bottom: 480px; font-weight: 600;">
+        <h1>Add a new department</h1>
+        <h2>Add a department here</h2>
+        <form action="/dep" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <button type="submit" class="save btn btn-default bg-primary">Save</button>
+        </form>
+    </div>
+{% endblock body %}
